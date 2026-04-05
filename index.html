@@ -194,8 +194,6 @@
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        max-width: 100vw;
-        clip-path: inset(0);
       }
       .intro-inner {
         width: min(100%, 1800px);
@@ -2887,11 +2885,12 @@
         var front = document.querySelector('.duwie-front');
         var word  = document.querySelector('.duwie-word');
         if (!front || !word) return;
+        var fs   = parseFloat(getComputedStyle(word).fontSize);
         var rect = front.getBoundingClientRect();
         var vw   = window.innerWidth;
-        if (rect.right > vw - 12) {
-          var fs = parseFloat(getComputedStyle(word).fontSize);
-          word.style.fontSize = (fs * (vw - 12) / rect.right) + 'px';
+        var visualRight = rect.right + fs * 0.26;
+        if (visualRight > vw - 8) {
+          word.style.fontSize = (fs * (vw - 8) / visualRight) + 'px';
         }
       }
       if (document.fonts && document.fonts.ready) {
