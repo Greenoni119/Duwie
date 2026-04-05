@@ -193,10 +193,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
-        contain: paint;
-        -webkit-mask-image: -webkit-radial-gradient(white, white);
-        mask-image: radial-gradient(white, white);
+        overflow: clip;
       }
       .intro-inner {
         width: min(100%, 1800px);
@@ -336,13 +333,13 @@
       @media (max-width: 640px) {
         :root {
           --stroke: 3px;
-          --centerX: -4vw;
+          --centerX: -8vw;
           --centerY: -1vh;
           --slideFrom: -140px;
           --trail-step: clamp(8px, 1.8vw, 12px);
         }
         .duwie-word {
-          font-size: clamp(100px, 30vw, 260px);
+          font-size: clamp(100px, 28vw, 260px);
         }
       }
       /* ── NAV GLITCH ── */
