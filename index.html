@@ -2892,7 +2892,8 @@
           var rect=front.getBoundingClientRect();
           var d=document.createElement('div');
           d.style.cssText='position:fixed;bottom:70px;left:0;right:0;background:red;color:#fff;font:bold 13px monospace;padding:6px;z-index:9999999;text-align:center;pointer-events:none;';
-          d.textContent='VW='+window.innerWidth+' FS='+fs+' right='+rect.right.toFixed(1)+' dpr='+devicePixelRatio;
+          var wrect=word.getBoundingClientRect();
+          d.textContent='VW='+window.innerWidth+' oW='+word.offsetWidth+' wR='+wrect.right.toFixed(0)+' fR='+rect.right.toFixed(0)+' dpr='+devicePixelRatio;
           document.body.appendChild(d);
           setTimeout(function(){d.remove();},8000);
         },1500);
