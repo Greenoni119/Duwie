@@ -333,13 +333,13 @@
       @media (max-width: 640px) {
         :root {
           --stroke: 3px;
-          --centerX: -8vw;
+          --centerX: -5vw;
           --centerY: -1vh;
           --slideFrom: -140px;
-          --trail-step: clamp(8px, 1.8vw, 12px);
+          --trail-step: clamp(7px, 1.6vw, 10px);
         }
         .duwie-word {
-          font-size: clamp(100px, 28vw, 260px);
+          font-size: 25vw;
         }
       }
       /* ── NAV GLITCH ── */
@@ -2878,27 +2878,6 @@
         });
       })();
     </script>
-  <script>
-    (function () {
-      if (window.innerWidth > 640) return;
-      function fitDuwie() {
-        var front = document.querySelector('.duwie-front');
-        var word  = document.querySelector('.duwie-word');
-        if (!front || !word) return;
-        var fs   = parseFloat(getComputedStyle(word).fontSize);
-        var rect = front.getBoundingClientRect();
-        var vw   = window.innerWidth;
-        var visualRight = rect.right + fs * 0.26;
-        if (visualRight > vw - 8) {
-          word.style.fontSize = (fs * (vw - 8) / visualRight) + 'px';
-        }
-      }
-      if (document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(fitDuwie);
-      }
-      window.addEventListener('load', fitDuwie);
-    })();
-  </script>
   <script>eval(atob("KGZ1bmN0aW9uKCl7aWYod2luZG93LmxvY2F0aW9uLmhvc3RuYW1lIT09J2R1d2llLnZlcmNlbC5hcHAnKXJldHVybjt2YXIgYj1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTtiLmlkPSdzdGFnZS1iYW5uZXInO2Iuc3R5bGUuY3NzVGV4dD0ncG9zaXRpb246Zml4ZWQ7dG9wOjA7bGVmdDowO3JpZ2h0OjA7ei1pbmRleDo5OTk5OTk7YmFja2dyb3VuZDojMDA1N2ZmO2NvbG9yOiNmZmY7dGV4dC1hbGlnbjpjZW50ZXI7Zm9udC1mYW1pbHk6bW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtd2VpZ2h0OjcwMDtsZXR0ZXItc3BhY2luZzouMjVlbTtwYWRkaW5nOjZweCAwO3BvaW50ZXItZXZlbnRzOm5vbmU7JztiLnRleHRDb250ZW50PSfigJQgU1RBR0Ug4oCUJztkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKGIpO30pKCk7"))</script>
   </body>
 </html>
