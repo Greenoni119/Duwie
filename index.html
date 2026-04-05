@@ -194,6 +194,8 @@
         align-items: center;
         justify-content: center;
         overflow: hidden;
+        transform: translateZ(0);
+        will-change: transform;
       }
       .intro-inner {
         width: min(100%, 1800px);
@@ -336,7 +338,7 @@
           --centerX: -5vw;
           --centerY: -1vh;
           --slideFrom: -140px;
-          --trail-step: clamp(7px, 1.6vw, 10px);
+          --trail-step: 3.5px;
         }
         .duwie-word {
           font-size: 25vw;
