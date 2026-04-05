@@ -1,0 +1,2677 @@
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>DUWIE | Pricing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,700;0,900;1,700;1,900&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              headline: ["Epilogue", "sans-serif"],
+              body: ["Inter", "sans-serif"],
+              label: ["Space Grotesk", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .grain-overlay {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        opacity: 0.04;
+        pointer-events: none;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      @keyframes mq {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .mq {
+        display: flex;
+        width: 200%;
+        animation: mq 28s linear infinite;
+      }
+      .mq2 {
+        display: flex;
+        width: 200%;
+        animation: mq 16s linear infinite;
+      }
+      .mq:hover,
+      .mq2:hover {
+        animation-play-state: paused;
+      }
+      .vr {
+        writing-mode: vertical-lr;
+      }
+      .oo {
+        -webkit-text-stroke: 1.5px #ff5c00;
+        color: transparent;
+      }
+      .ow {
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.12);
+        color: transparent;
+      }
+      .dotgrid {
+        background-size: 40px 40px;
+        background-image: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.04) 1px,
+          transparent 1px
+        );
+      }
+      .ng {
+        background: rgba(10, 10, 10, 0.85);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .pshadow {
+        box-shadow: 8px 8px 0 #fdd000;
+      }
+      #pt {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: #0a0a0a;
+        transform: translateX(0);
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #pt::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #ff5c00;
+        box-shadow: 0 0 14px 4px rgba(255, 92, 0, 0.65);
+      }
+      #pt-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        position: relative;
+        z-index: 1;
+      }
+      #pt-logo {
+        width: clamp(220px, 45vw, 560px);
+        height: auto;
+        display: block;
+      }
+      #pt-bar-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      #pt-bar-track {
+        width: clamp(180px, 30vw, 360px);
+        height: 2px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+      #pt-bar-fill {
+        height: 100%;
+        width: 0%;
+        background: #ff5c00;
+        box-shadow: 0 0 8px 2px rgba(255, 92, 0, 0.4);
+        border-radius: 999px;
+        transition: width 480ms cubic-bezier(0.76, 0, 0.24, 1);
+      }
+      #pt-label {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        color: rgba(255, 255, 255, 0.25);
+      }
+      #grain {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+        opacity: 0.5;
+        mix-blend-mode: screen;
+      }
+      /* -- NAV GLITCH -- */
+      .nav-glitch-char {
+        display: inline-block;
+        position: relative;
+      }
+      .nav-glitch-char.glitching {
+        color: transparent;
+      }
+      .nav-glitch-char.glitching::after {
+        content: attr(data-glitch);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: #ff5c00;
+      }
+      /* -- SCROLL REVEAL GLITCH -- */
+      .scroll-reveal-title {
+        display: block;
+        white-space: pre;
+        user-select: none;
+      }
+      .scroll-reveal-title .sr-char {
+        display: inline-block;
+        position: relative;
+        color: transparent;
+      }
+      .scroll-reveal-title .sr-char.revealed {
+        color: white;
+      }
+      .scroll-reveal-title .sr-char.glitching {
+        color: transparent;
+      }
+      .scroll-reveal-title .sr-char.glitching::after {
+        content: attr(data-glitch);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: #ff5c00;
+        font-weight: 400;
+        font-style: normal;
+      }
+      #tiers-text {
+        transition: -webkit-text-stroke 0.8s ease;
+      }
+      #tiers-text.tiers-revealed {
+        -webkit-text-stroke: 1.5px #ff5c00;
+      }
+      /* -- CARD HOVER GLITCH -- */
+      .card-glitch-char {
+        display: inline-block;
+        position: relative;
+        white-space: pre;
+      }
+      .card-glitch-char.glitching {
+        color: transparent;
+      }
+      .card-glitch-char.glitching::after {
+        content: attr(data-glitch);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: #ff5c00;
+      }
+    
+      /* ── HIDE OLD PT OVERLAY ── */
+      #pt { display: none !important; }
+
+      /* ── TRANSITION CANVAS ── */
+      #gc {
+        position: fixed;
+        inset: 0;
+        z-index: 9998;
+        pointer-events: none;
+      }
+      /* ── TRANSITION CITY LAYER ── */
+      #cities {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: transparent;
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .cr {
+        height: 12.5vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .ct {
+        display: inline-flex;
+        align-items: center;
+        white-space: nowrap;
+        will-change: transform;
+        animation: rollL 38s linear infinite;
+      }
+      .ct.r { animation-name: rollR; }
+      @keyframes rollL { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+      @keyframes rollR { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+      .cname { display: inline-flex; align-items: center; padding: 0 0.15em; }
+      .ch {
+        font-family: "Epilogue", sans-serif;
+        font-weight: 900;
+        font-style: italic;
+        text-transform: uppercase;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        color: #fff;
+        display: inline;
+      }
+      .cr.lg .ch { font-size: 9.5vh; color: #444; }
+      .cr.sm .ch { font-size: 6.8vh; color: #2a2a2a; }
+      .ch.sp { min-width: 0.28em; }
+      .cs {
+        color: #ff5c00;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3vh;
+        padding: 0 0.2em;
+        vertical-align: middle;
+        font-family: "Epilogue", sans-serif;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#0A0A0A] text-[#e5e2e1] font-body overflow-x-hidden selection:bg-[#ff5c00] selection:text-[#3a0a00]"
+  >
+    <canvas id="gc"></canvas>
+
+            <div id="cities">
+      <div class="cr lg">
+        <div class="ct" style="animation-duration: 38s">
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="F">F</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="c">c</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="s">s</span>
+              <span class="ch" data-orig="c">c</span>
+              <span class="ch" data-orig="o">o</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="O">O</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="k">k</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="d">d</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="J">J</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="s">s</span>
+              <span class="ch" data-orig="e">e</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="B">B</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="k">k</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="y">y</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="P">P</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="A">A</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="o">o</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="F">F</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="m">m</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="F">F</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="c">c</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="s">s</span>
+              <span class="ch" data-orig="c">c</span>
+              <span class="ch" data-orig="o">o</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="O">O</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="k">k</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="d">d</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="J">J</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="s">s</span>
+              <span class="ch" data-orig="e">e</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="B">B</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="k">k</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="y">y</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="P">P</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="A">A</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="o">o</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="F">F</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="m">m</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+            </span>
+            <span class="cs">◆</span>
+        </div>
+      </div>
+      <div class="cr sm">
+        <div class="ct r" style="animation-duration: 30s">
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="y">y</span>
+              <span class="ch" data-orig="v">v</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="e">e</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="a">a</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="p">p</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="o">o</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="M">M</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="V">V</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="w">w</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="H">H</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="y">y</span>
+              <span class="ch" data-orig="w">w</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="d">d</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="D">D</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="y">y</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="y">y</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="y">y</span>
+              <span class="ch" data-orig="v">v</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="e">e</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="a">a</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="p">p</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="o">o</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="M">M</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="V">V</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="w">w</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="H">H</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="y">y</span>
+              <span class="ch" data-orig="w">w</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="d">d</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="D">D</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="y">y</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="y">y</span>
+            </span>
+            <span class="cs">◆</span>
+        </div>
+      </div>
+      <div class="cr lg">
+        <div class="ct" style="animation-duration: 44s">
+            <span class="cname">
+              <span class="ch" data-orig="R">R</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="d">d</span>
+              <span class="ch" data-orig="w">w</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="d">d</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="y">y</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="M">M</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="o">o</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="W">W</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="k">k</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="c">c</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="d">d</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="B">B</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="w">w</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="d">d</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="L">L</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="v">v</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="m">m</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="e">e</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="R">R</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="d">d</span>
+              <span class="ch" data-orig="w">w</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="d">d</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="y">y</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="M">M</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="o">o</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="W">W</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="k">k</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="c">c</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="d">d</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="B">B</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="w">w</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="d">d</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="L">L</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="v">v</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="m">m</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="e">e</span>
+            </span>
+            <span class="cs">◆</span>
+        </div>
+      </div>
+      <div class="cr sm">
+        <div class="ct r" style="animation-duration: 26s">
+            <span class="cname">
+              <span class="ch" data-orig="P">P</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="s">s</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="n">n</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="D">D</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="b">b</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="n">n</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="R">R</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="c">c</span>
+              <span class="ch" data-orig="h">h</span>
+              <span class="ch" data-orig="m">m</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="d">d</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="A">A</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="m">m</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="d">d</span>
+              <span class="ch" data-orig="a">a</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="s">s</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="o">o</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="N">N</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="v">v</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="o">o</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="P">P</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="s">s</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="n">n</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="D">D</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="b">b</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="n">n</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="R">R</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="c">c</span>
+              <span class="ch" data-orig="h">h</span>
+              <span class="ch" data-orig="m">m</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="d">d</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="A">A</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="m">m</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="d">d</span>
+              <span class="ch" data-orig="a">a</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="s">s</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="o">o</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="N">N</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="v">v</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="o">o</span>
+            </span>
+            <span class="cs">◆</span>
+        </div>
+      </div>
+      <div class="cr lg">
+        <div class="ct" style="animation-duration: 42s">
+            <span class="cname">
+              <span class="ch" data-orig="M">M</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="V">V</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="y">y</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="R">R</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="f">f</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="l">l</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="P">P</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="m">m</span>
+              <span class="ch" data-orig="a">a</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="R">R</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="s">s</span>
+              <span class="ch" data-orig="a">a</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="N">N</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="p">p</span>
+              <span class="ch" data-orig="a">a</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="M">M</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="n">n</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="M">M</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="V">V</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="y">y</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="R">R</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="f">f</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="l">l</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="P">P</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="m">m</span>
+              <span class="ch" data-orig="a">a</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="R">R</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="s">s</span>
+              <span class="ch" data-orig="a">a</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="N">N</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="p">p</span>
+              <span class="ch" data-orig="a">a</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="M">M</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="n">n</span>
+            </span>
+            <span class="cs">◆</span>
+        </div>
+      </div>
+      <div class="cr sm">
+        <div class="ct r" style="animation-duration: 32s">
+            <span class="cname">
+              <span class="ch" data-orig="O">O</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="k">k</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="d">d</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="B">B</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="k">k</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="y">y</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="F">F</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="m">m</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="H">H</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="y">y</span>
+              <span class="ch" data-orig="w">w</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="d">d</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="J">J</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="s">s</span>
+              <span class="ch" data-orig="e">e</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="P">P</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="A">A</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="o">o</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="O">O</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="k">k</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="d">d</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="B">B</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="k">k</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="y">y</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="F">F</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="m">m</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="H">H</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="y">y</span>
+              <span class="ch" data-orig="w">w</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="d">d</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="J">J</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="s">s</span>
+              <span class="ch" data-orig="e">e</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="P">P</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="A">A</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="o">o</span>
+            </span>
+            <span class="cs">◆</span>
+        </div>
+      </div>
+      <div class="cr lg">
+        <div class="ct" style="animation-duration: 50s">
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="F">F</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="c">c</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="s">s</span>
+              <span class="ch" data-orig="c">c</span>
+              <span class="ch" data-orig="o">o</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="p">p</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="o">o</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="M">M</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="V">V</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="w">w</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="y">y</span>
+              <span class="ch" data-orig="v">v</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="e">e</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="a">a</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="R">R</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="d">d</span>
+              <span class="ch" data-orig="w">w</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="d">d</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="y">y</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="F">F</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="c">c</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="s">s</span>
+              <span class="ch" data-orig="c">c</span>
+              <span class="ch" data-orig="o">o</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="p">p</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="o">o</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="M">M</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="V">V</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="w">w</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="y">y</span>
+              <span class="ch" data-orig="v">v</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="e">e</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="S">S</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="a">a</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="R">R</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="d">d</span>
+              <span class="ch" data-orig="w">w</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="d">d</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="y">y</span>
+            </span>
+            <span class="cs">◆</span>
+        </div>
+      </div>
+      <div class="cr sm">
+        <div class="ct r" style="animation-duration: 28s">
+            <span class="cname">
+              <span class="ch" data-orig="W">W</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="k">k</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="c">c</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="d">d</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="B">B</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="w">w</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="d">d</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="L">L</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="v">v</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="m">m</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="e">e</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="P">P</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="s">s</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="n">n</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="D">D</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="b">b</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="n">n</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="W">W</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch sp" data-orig=" ">&nbsp;</span>
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="k">k</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="C">C</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="c">c</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="d">d</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="B">B</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="w">w</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="d">d</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="L">L</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="v">v</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="m">m</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="r">r</span>
+              <span class="ch" data-orig="e">e</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="P">P</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="e">e</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="s">s</span>
+              <span class="ch" data-orig="a">a</span>
+              <span class="ch" data-orig="n">n</span>
+              <span class="ch" data-orig="t">t</span>
+              <span class="ch" data-orig="o">o</span>
+              <span class="ch" data-orig="n">n</span>
+            </span>
+            <span class="cs">◆</span>
+            <span class="cname">
+              <span class="ch" data-orig="D">D</span>
+              <span class="ch" data-orig="u">u</span>
+              <span class="ch" data-orig="b">b</span>
+              <span class="ch" data-orig="l">l</span>
+              <span class="ch" data-orig="i">i</span>
+              <span class="ch" data-orig="n">n</span>
+            </span>
+            <span class="cs">◆</span>
+        </div>
+      </div>
+    </div>
+
+    <canvas id="grain"></canvas>
+    <div id="pt">
+      <div id="pt-inner">
+        <img id="pt-logo" src="duwie_clean_transparent.png" alt="DUWIE" />
+        <div id="pt-bar-area">
+          <div id="pt-bar-track"><div id="pt-bar-fill"></div></div>
+          <span id="pt-label">Loading</span>
+        </div>
+      </div>
+    </div>
+    <div class="fixed inset-0 z-[900] grain-overlay pointer-events-none"></div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-5">
+      <nav
+        class="max-w-6xl mx-auto flex justify-between items-center ng border border-white/5 rounded-full px-6 md:px-8 py-3 shadow-[0_20px_60px_rgba(0,0,0,.6)]"
+      >
+        <a
+          href="index.html"
+          class="text-xl font-headline font-black italic tracking-tighter text-white uppercase"
+          ><image src="duwie_clean_transparent.png" alt="DUWIE logo" width="80" height="auto" /></a
+        >
+        <div class="hidden md:flex items-center gap-5 lg:gap-7">
+          <a
+            href="services.html"
+            class="text-neutral-400 hover:text-white transition-colors duration-200 font-label text-[11px] uppercase tracking-widest"
+            data-glitch-nav="SERVICES"
+            >Services</a
+          >
+          <a
+            href="process.html"
+            class="text-neutral-400 hover:text-white transition-colors duration-200 font-label text-[11px] uppercase tracking-widest"
+            data-glitch-nav="PROCESS"
+            >Process</a
+          >
+          <a
+            href="pricing.html"
+            class="text-white border-b border-[#ff5c00] pb-0.5 font-label text-[11px] uppercase tracking-widest"
+            data-glitch-nav="PRICING"
+            >Pricing</a
+          >
+          <a
+            href="about.html"
+            class="text-neutral-400 hover:text-white transition-colors duration-200 font-label text-[11px] uppercase tracking-widest"
+            data-glitch-nav="ABOUT"
+            >About</a
+          >
+          <a
+            href="contact.html"
+            class="text-neutral-400 hover:text-white transition-colors duration-200 font-label text-[11px] uppercase tracking-widest"
+            data-glitch-nav="CONTACT"
+            >Contact</a
+          >
+        </div>
+        <button
+          id="mob-menu-btn"
+          class="md:hidden flex flex-col justify-center gap-[5px] p-1"
+          aria-label="Open menu"
+        >
+          <span class="block w-6 h-[1.5px] bg-white"></span>
+          <span class="block w-6 h-[1.5px] bg-white"></span>
+          <span class="block w-6 h-[1.5px] bg-white"></span>
+        </button>
+        <a
+          href="contact.html"
+          class="hidden md:inline-flex bg-[#ff5c00] text-[#3a0a00] font-label font-bold text-[11px] uppercase tracking-widest px-5 py-2.5 rounded-full hover:brightness-110 active:scale-95 transition-all"
+          >Start a Project</a
+        >
+      </nav>
+    </header>
+    <div
+      id="mob-menu"
+      class="fixed inset-0 z-[80] bg-[#0A0A0A] flex flex-col"
+      style="
+        transform: translateX(100%);
+        transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+      "
+      aria-hidden="true"
+    >
+      <div
+        class="flex items-center justify-between px-6 py-5 border-b border-white/5"
+      >
+        <a
+          href="index.html"
+          class="text-xl font-headline font-black italic tracking-tighter text-white uppercase"
+          ><image src="duwie_clean_transparent.png" alt="DUWIE logo" width="80" height="auto" /></a
+        >
+        <button
+          id="mob-menu-close"
+          class="flex items-center justify-center w-10 h-10 text-neutral-400 hover:text-white transition-colors"
+          aria-label="Close menu"
+        >
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col flex-1 overflow-y-auto">
+        <a
+          href="services.html"
+          class="flex items-center px-6 py-8 border-b border-white/5 font-headline font-black text-4xl uppercase tracking-tighter text-white hover:text-[#ff5c00] transition-colors"
+          >Services</a
+        >
+        <a
+          href="process.html"
+          class="flex items-center px-6 py-8 border-b border-white/5 font-headline font-black text-4xl uppercase tracking-tighter text-white hover:text-[#ff5c00] transition-colors"
+          >Process</a
+        >
+        <a
+          href="pricing.html"
+          class="flex items-center px-6 py-8 border-b border-white/5 font-headline font-black text-4xl uppercase tracking-tighter text-[#ff5c00]"
+          >Pricing</a
+        >
+        <a
+          href="about.html"
+          class="flex items-center px-6 py-8 border-b border-white/5 font-headline font-black text-4xl uppercase tracking-tighter text-white hover:text-[#ff5c00] transition-colors"
+          >About</a
+        >
+        <a
+          href="contact.html"
+          class="flex items-center px-6 py-8 border-b border-white/5 font-headline font-black text-4xl uppercase tracking-tighter text-white hover:text-[#ff5c00] transition-colors"
+          >Contact</a
+        >
+      </nav>
+      <div class="px-6 py-8 border-t border-white/5">
+        <a
+          href="contact.html"
+          class="block text-center bg-[#ff5c00] text-[#3a0a00] font-headline font-black text-xl italic uppercase tracking-tighter px-8 py-5 hover:brightness-110 transition-all"
+          >Start a Project</a
+        >
+      </div>
+    </div>
+
+    <section
+      class="pt-40 pb-20 px-6 md:px-12 lg:px-24 border-b border-white/5 relative overflow-hidden"
+    >
+      <div
+        class="absolute -top-10 right-0 font-headline font-black text-[12rem] leading-none text-white/[0.025] select-none pointer-events-none uppercase"
+      >
+        PRICE
+      </div>
+      <div class="max-w-[1400px] mx-auto relative z-10">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="h-px w-12 bg-[#ff5c00]"></div>
+          <span
+            class="font-label text-[11px] uppercase tracking-[.3em] text-[#ff5c00]"
+            >// Investment</span
+          >
+        </div>
+        <div id="pricing-hero-wrap" class="mb-6">
+          <div
+            class="scroll-reveal-title font-headline font-black leading-none tracking-tighter uppercase"
+            style="font-size: clamp(3rem, 8vw, 7rem)"
+            data-value="STRATEGIC"
+            data-resolve-color="white"
+          ></div>
+          <span
+            id="tiers-text"
+            class="ow font-headline font-black leading-none tracking-tighter uppercase block"
+            style="font-size: clamp(3rem, 8vw, 7rem)"
+            >TIERS</span
+          >
+        </div>
+        <p class="text-neutral-500 text-base leading-relaxed max-w-xl">
+          No bloated agency rates. No hidden fees. Transparent pricing built for
+          long-term value — and a $200/month model that makes a full dev team
+          affordable for any business.
+        </p>
+      </div>
+    </section>
+    <!-- value props -->
+    <section class="py-px bg-[#0A0A0A]">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 border-b border-white/5"
+      >
+        <div
+          class="bg-[#131313] p-10 border-t-2 border-[#ff5c00] hover:bg-[#1c1b1b] transition-colors"
+        >
+          <span
+            class="material-symbols-outlined text-[#ff5c00] mb-6 text-4xl block"
+            >cleaning_services</span
+          >
+          <h4
+            class="font-label font-bold text-xl uppercase mb-4 text-white"
+            data-glitch-hover="NO BLOATED PRICING"
+          >
+            No Bloated Pricing
+          </h4>
+          <p class="text-neutral-500 text-sm leading-relaxed">
+            Agency-quality results without agency overhead. Predictable,
+            transparent pricing built for businesses that watch their margins.
+          </p>
+        </div>
+        <div
+          class="bg-[#131313] p-10 border-t-2 border-[#ff5c00] hover:bg-[#1c1b1b] transition-colors"
+        >
+          <span
+            class="material-symbols-outlined text-[#ff5c00] mb-6 text-4xl block"
+            >interests</span
+          >
+          <h4
+            class="font-label font-bold text-xl uppercase mb-4 text-white"
+            data-glitch-hover="NO COOKIE-CUTTER"
+          >
+            No Cookie-Cutter
+          </h4>
+          <p class="text-neutral-500 text-sm leading-relaxed">
+            Every site is built for your business specifically. We don't
+            drag-and-drop themes — we architect from scratch with your goals in
+            mind.
+          </p>
+        </div>
+        <div
+          class="bg-[#131313] p-10 border-t-2 border-[#fdd000] hover:bg-[#1c1b1b] transition-colors"
+        >
+          <span
+            class="material-symbols-outlined text-[#fdd000] mb-6 text-4xl block"
+            >support_agent</span
+          >
+          <h4
+            class="font-label font-bold text-xl uppercase mb-4 text-white"
+            data-glitch-hover="NO TECH HEADACHES"
+          >
+            No Tech Headaches
+          </h4>
+          <p class="text-neutral-500 text-sm leading-relaxed">
+            We handle hosting, updates, security, performance. You focus on
+            running your business — we keep the lights on and the site sharp.
+          </p>
+        </div>
+        <div
+          class="bg-[#131313] p-10 border-t-2 border-[#fdd000] hover:bg-[#1c1b1b] transition-colors"
+        >
+          <span
+            class="material-symbols-outlined text-[#fdd000] mb-6 text-4xl block"
+            >groups</span
+          >
+          <h4
+            class="font-label font-bold text-xl uppercase mb-4 text-white"
+            data-glitch-hover="FULL TEAM, NOT FULL PAYROLL"
+          >
+            Full Team, Not Full Payroll
+          </h4>
+          <p class="text-neutral-500 text-sm leading-relaxed">
+            $200/month gets you a full-stack dev team on retainer. Design,
+            development, and support — without the overhead of hiring in-house.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- pricing tiers -->
+    <section class="py-0 bg-[#0A0A0A]">
+      <div class="grid grid-cols-1 md:grid-cols-3 border border-white/5">
+        <div
+          class="bg-[#131313] p-12 border-r border-white/5 hover:bg-[#1c1b1b] transition-colors"
+        >
+          <div class="flex justify-between items-start mb-14">
+            <span
+              class="font-label text-xs border border-white/10 px-2 py-1 uppercase text-neutral-400"
+              >Phase_01</span
+            ><span class="material-symbols-outlined text-[#ffb59a]">bolt</span>
+          </div>
+          <h3
+            class="font-headline font-black text-3xl mb-3 text-white"
+            data-glitch-hover="THE BUILD"
+          >
+            The Build
+          </h3>
+          <p class="text-neutral-500 font-body text-sm mb-12 leading-relaxed">
+            One-time design and development. Custom site, your brand, no
+            templates. Scope-based pricing with full transparency upfront.
+          </p>
+          <div
+            class="font-headline font-black text-5xl mb-3 text-white cursor-default"
+            data-glitch-price="FROM $1,500"
+          >
+            From <span class="text-[#ff5c00]">$1,500</span>
+          </div>
+          <p
+            class="font-label text-[10px] uppercase tracking-widest text-neutral-600 mb-12"
+          >
+            One-time / Scope-based
+          </p>
+          <ul
+            class="space-y-4 mb-16 font-label text-sm uppercase tracking-wider text-neutral-400"
+          >
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-xs text-[#ff5c00]"
+                >double_arrow</span
+              >Custom design from scratch
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-xs text-[#ff5c00]"
+                >double_arrow</span
+              >Up to 5 pages
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-xs text-[#ff5c00]"
+                >double_arrow</span
+              >Mobile-responsive
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-xs text-[#ff5c00]"
+                >double_arrow</span
+              >SEO foundation
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-xs text-[#ff5c00]"
+                >double_arrow</span
+              >30 days post-launch support
+            </li>
+          </ul>
+          <a
+            href="contact.html"
+            class="w-full py-5 border border-white/15 font-label font-bold uppercase tracking-[.2em] text-xs flex items-center justify-center hover:bg-[#ff5c00] hover:border-[#ff5c00] hover:text-[#3a0a00] transition-all"
+            >Get a Quote</a
+          >
+        </div>
+        <div class="bg-[#ff5c00] p-12 relative z-20 pshadow">
+          <div
+            class="absolute top-0 right-0 bg-[#fdd000] text-[#3a0a00] font-label font-bold text-[10px] uppercase px-4 py-1.5 tracking-tighter"
+          >
+            Most Popular
+          </div>
+          <div class="flex justify-between items-start mb-14">
+            <span
+              class="font-label text-xs border border-[#3a0a00]/30 px-2 py-1 uppercase text-[#3a0a00]"
+              >Phase_02</span
+            ><span
+              class="material-symbols-outlined text-[#3a0a00]"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >rocket_launch</span
+            >
+          </div>
+          <h3 class="font-headline font-black text-3xl mb-3 text-[#3a0a00]">
+            The Retainer
+          </h3>
+          <p class="text-[#3a0a00]/80 font-body text-sm mb-12 leading-relaxed">
+            Build cost + a low monthly fee for ongoing access to your full dev
+            team. Updates, support, performance monitoring — all covered.
+          </p>
+          <div class="font-headline font-black text-5xl mb-1 text-[#3a0a00]">
+            $200<span class="text-xl font-label opacity-60 ml-2">/ month</span>
+          </div>
+          <p
+            class="font-label text-[10px] uppercase tracking-widest text-[#3a0a00]/60 mb-12"
+          >
+            Plus one-time build cost
+          </p>
+          <ul
+            class="space-y-4 mb-16 font-label text-sm uppercase tracking-wider text-[#3a0a00]"
+          >
+            <li class="flex items-center gap-3">
+              <span
+                class="material-symbols-outlined text-xs"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >check_circle</span
+              >Everything in The Build
+            </li>
+            <li class="flex items-center gap-3">
+              <span
+                class="material-symbols-outlined text-xs"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >check_circle</span
+              >Ongoing maintenance & updates
+            </li>
+            <li class="flex items-center gap-3">
+              <span
+                class="material-symbols-outlined text-xs"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >check_circle</span
+              >Hosting oversight
+            </li>
+            <li class="flex items-center gap-3">
+              <span
+                class="material-symbols-outlined text-xs"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >check_circle</span
+              >Security monitoring
+            </li>
+            <li class="flex items-center gap-3">
+              <span
+                class="material-symbols-outlined text-xs"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >check_circle</span
+              >Monthly feature additions
+            </li>
+            <li class="flex items-center gap-3">
+              <span
+                class="material-symbols-outlined text-xs"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >check_circle</span
+              >Priority support
+            </li>
+          </ul>
+          <a
+            href="contact.html"
+            class="w-full py-5 bg-[#0A0A0A] text-white font-label font-bold uppercase tracking-[.2em] text-xs flex items-center justify-center hover:bg-white hover:text-[#0A0A0A] transition-all shadow-[0_4px_0_#fdd000]"
+            >Start the Retainer</a
+          >
+        </div>
+        <div class="bg-[#131313] p-12 hover:bg-[#1c1b1b] transition-colors">
+          <div class="flex justify-between items-start mb-14">
+            <span
+              class="font-label text-xs border border-white/10 px-2 py-1 uppercase text-neutral-400"
+              >Phase_XX</span
+            ><span class="material-symbols-outlined text-[#fdd000]"
+              >emergency_heat</span
+            >
+          </div>
+          <h3
+            class="font-headline font-black text-3xl mb-3 text-white"
+            data-glitch-hover="THE SYSTEM"
+          >
+            The System
+          </h3>
+          <p class="text-neutral-500 font-body text-sm mb-12 leading-relaxed">
+            Full custom web applications, SaaS platforms, complex integrations.
+            Built for scale from day one with a dedicated team behind it.
+          </p>
+          <div
+            class="font-headline font-black text-5xl mb-3 text-white cursor-default"
+            data-glitch-price="CUSTOM"
+          >
+            Custom
+          </div>
+          <p
+            class="font-label text-[10px] uppercase tracking-widest text-neutral-600 mb-12"
+          >
+            Project-based quote
+          </p>
+          <ul
+            class="space-y-4 mb-16 font-label text-sm uppercase tracking-wider text-neutral-400"
+          >
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-xs text-[#fdd000]"
+                >terminal</span
+              >Full-stack application build
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-xs text-[#fdd000]"
+                >terminal</span
+              >Database architecture
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-xs text-[#fdd000]"
+                >terminal</span
+              >Third-party integrations
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-xs text-[#fdd000]"
+                >terminal</span
+              >Auth & security systems
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-xs text-[#fdd000]"
+                >terminal</span
+              >Dedicated support retainer
+            </li>
+          </ul>
+          <a
+            href="contact.html"
+            class="w-full py-5 border border-[#fdd000]/30 text-[#fdd000] font-label font-bold uppercase tracking-[.2em] text-xs flex items-center justify-center hover:bg-[#fdd000] hover:text-[#0A0A0A] hover:border-[#fdd000] transition-all"
+            >Request Intel</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="relative w-full overflow-hidden border-t border-white/5 bg-[#0A0A0A]"
+    >
+      <div
+        class="absolute -bottom-8 left-0 w-full text-center pointer-events-none select-none overflow-hidden"
+      >
+        <span
+          class="font-headline font-black text-white/[0.025] leading-none"
+          style="font-size: 20vw"
+          >DUWIE</span
+        >
+      </div>
+      <div
+        class="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-8 px-8 md:px-16 py-16 max-w-[1400px] mx-auto"
+      >
+        <div class="col-span-2 md:col-span-1 flex flex-col gap-4">
+          <a
+            href="index.html"
+            class="font-headline font-black italic text-xl text-white tracking-tighter uppercase"
+            >DUWIE</a
+          >
+          <p
+            class="font-label text-[10px] text-neutral-600 leading-relaxed uppercase tracking-wider"
+          >
+            Web solutions built for growth.<br />Full-stack results without the
+            full-stack payroll.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <h5
+            class="font-label text-[10px] font-bold uppercase tracking-widest text-[#ff5c00] mb-1"
+          >
+            Services
+          </h5>
+          <a
+            href="services.html"
+            class="font-label text-[10px] text-neutral-600 uppercase tracking-widest hover:text-white transition-colors"
+            >Web Design</a
+          >
+          <a
+            href="services.html"
+            class="font-label text-[10px] text-neutral-600 uppercase tracking-widest hover:text-white transition-colors"
+            >Web Applications</a
+          >
+          <a
+            href="services.html"
+            class="font-label text-[10px] text-neutral-600 uppercase tracking-widest hover:text-white transition-colors"
+            >Monthly Retainer</a
+          >
+          <a
+            href="services.html"
+            class="font-label text-[10px] text-neutral-600 uppercase tracking-widest hover:text-white transition-colors"
+            >Technical Audits</a
+          >
+        </div>
+        <div class="flex flex-col gap-3">
+          <h5
+            class="font-label text-[10px] font-bold uppercase tracking-widest text-[#ff5c00] mb-1"
+          >
+            Navigate
+          </h5>
+          <a
+            href="process.html"
+            class="font-label text-[10px] text-neutral-600 uppercase tracking-widest hover:text-white transition-colors"
+            >Our Process</a
+          >
+          <a
+            href="about.html"
+            class="font-label text-[10px] text-neutral-600 uppercase tracking-widest hover:text-white transition-colors"
+            >About</a
+          >
+          <a
+            href="pricing.html"
+            class="font-label text-[10px] text-neutral-600 uppercase tracking-widest hover:text-white transition-colors"
+            >Pricing</a
+          >
+          <a
+            href="contact.html"
+            class="font-label text-[10px] text-neutral-600 uppercase tracking-widest hover:text-white transition-colors"
+            >Contact</a
+          >
+        </div>
+        <div class="flex flex-col gap-3">
+          <h5
+            class="font-label text-[10px] font-bold uppercase tracking-widest text-[#ff5c00] mb-1"
+          >
+            Legal
+          </h5>
+          <a
+            href="#"
+            class="font-label text-[10px] text-neutral-600 uppercase tracking-widest hover:text-white transition-colors"
+            >Privacy Policy</a
+          >
+          <a
+            href="#"
+            class="font-label text-[10px] text-neutral-600 uppercase tracking-widest hover:text-white transition-colors"
+            >Terms of Service</a
+          >
+          <div class="flex gap-3 mt-3">
+            <span class="material-symbols-outlined text-[#ff5c00] text-lg"
+              >alternate_email</span
+            >
+            <span class="material-symbols-outlined text-[#ff5c00] text-lg"
+              >terminal</span
+            >
+            <span class="material-symbols-outlined text-[#ff5c00] text-lg"
+              >sensors</span
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="border-t border-white/5 px-8 md:px-16 py-5 flex justify-between items-center relative z-10"
+      >
+        <p
+          class="font-label text-[10px] uppercase tracking-widest text-neutral-700"
+        >
+          2026 DUWIE. ALL RIGHTS RESERVED.
+        </p>
+        <div
+          class="flex gap-6 font-label text-[10px] uppercase tracking-widest text-neutral-700"
+        >
+          <span>SYSTEM: OPERATIONAL</span><span>UPTIME: 99.9%</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var glitchChars =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%^&*_+=-<>?/[]{}1234567890";
+        function setupNavGlitch(el) {
+          var orig = el.dataset.glitchNav,
+            animating = false;
+          function build() {
+            el.innerHTML = orig
+              .split("")
+              .map(function (c) {
+                return c === " "
+                  ? '<span class="nav-glitch-char space"> </span>'
+                  : '<span class="nav-glitch-char">' + c + "</span>";
+              })
+              .join("");
+          }
+          function run() {
+            if (animating) return;
+            animating = true;
+            var spans = Array.from(el.querySelectorAll(".nav-glitch-char")),
+              progress = 0,
+              lastT = 0,
+              lastSym = 0;
+            function step(ts) {
+              if (!lastT) lastT = ts;
+              if (!lastSym) lastSym = ts;
+              if (ts - lastT >= 15) {
+                progress += 0.34;
+                lastT = ts;
+              }
+              var doSym = ts - lastSym >= 65;
+              spans.forEach(function (span, i) {
+                var real = orig[i];
+                if (real === " ") {
+                  span.className = "nav-glitch-char space";
+                  span.textContent = " ";
+                  span.removeAttribute("data-glitch");
+                  return;
+                }
+                if (i < progress) {
+                  span.className = "nav-glitch-char";
+                  span.textContent = real;
+                  span.removeAttribute("data-glitch");
+                } else {
+                  span.className = "nav-glitch-char glitching";
+                  span.textContent = real;
+                  if (doSym)
+                    span.setAttribute(
+                      "data-glitch",
+                      glitchChars[
+                        Math.floor(Math.random() * glitchChars.length)
+                      ],
+                    );
+                }
+              });
+              if (doSym) lastSym = ts;
+              if (progress >= orig.length) {
+                build();
+                animating = false;
+                return;
+              }
+              requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+          }
+          build();
+          el.addEventListener("mouseenter", run);
+        }
+        document.querySelectorAll("[data-glitch-nav]").forEach(setupNavGlitch);
+      })();
+      (function () {
+        var gc = document.getElementById("grain");
+        if (!gc) return;
+        var ctx = gc.getContext("2d", { alpha: true }),
+          DENSITY = 14000,
+          SOPAC = 0.35,
+          SMAX = 1.8,
+          SCRATCHES = 18;
+        function resize() {
+          var dpr = Math.max(1, window.devicePixelRatio || 1);
+          gc.width = Math.floor(window.innerWidth * dpr);
+          gc.height = Math.floor(window.innerHeight * dpr);
+          gc.style.width = window.innerWidth + "px";
+          gc.style.height = window.innerHeight + "px";
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          draw();
+        }
+        function draw() {
+          var w = window.innerWidth,
+            h = window.innerHeight;
+          ctx.clearRect(0, 0, w, h);
+          ctx.fillStyle = "rgba(255,255,255," + SOPAC + ")";
+          for (var i = 0; i < DENSITY; i++) {
+            var x = Math.random() * w,
+              y = Math.random() * h,
+              r =
+                Math.random() < 0.94
+                  ? Math.random() * 0.9
+                  : Math.random() * SMAX;
+            ctx.beginPath();
+            ctx.arc(x, y, r, 0, Math.PI * 2);
+            ctx.fill();
+          }
+          ctx.strokeStyle = "rgba(255,255,255,0.08)";
+          ctx.lineWidth = 1;
+          for (var s = 0; s < SCRATCHES; s++) {
+            var x = Math.random() * w,
+              y = Math.random() * h,
+              len = 60 + Math.random() * 220,
+              ang = ((Math.random() * 20 - 10) * Math.PI) / 180;
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x + Math.cos(ang) * len, y + Math.sin(ang) * len);
+            ctx.stroke();
+          }
+        }
+        window.addEventListener("resize", resize);
+        resize();
+      })();
+      (function () {
+        var srChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%^&*_+=-<>?/[]{}1234567890";
+        var sysEl = document.querySelector(
+          "#pricing-hero-wrap .scroll-reveal-title",
+        );
+        if (sysEl) {
+          var orig = sysEl.dataset.value,
+            played = false;
+          function buildSys() {
+            sysEl.innerHTML = orig
+              .split("")
+              .map(function (c) {
+                return '<span class="sr-char">' + c + "</span>";
+              })
+              .join("");
+          }
+          function playSys() {
+            if (played) return;
+            played = true;
+            var spans = Array.from(sysEl.querySelectorAll(".sr-char")),
+              progress = 0,
+              lastT = 0,
+              lastSym = 0;
+            function step(ts) {
+              if (!lastT) lastT = ts;
+              if (!lastSym) lastSym = ts;
+              if (ts - lastT >= 22) {
+                progress += 0.18;
+                lastT = ts;
+              }
+              var doSym = ts - lastSym >= 85;
+              spans.forEach(function (span, i) {
+                var real = orig[i];
+                if (i < progress) {
+                  span.className = "sr-char revealed";
+                  span.textContent = real;
+                  span.removeAttribute("data-glitch");
+                } else {
+                  span.className = "sr-char glitching";
+                  span.textContent = real;
+                  if (doSym)
+                    span.setAttribute(
+                      "data-glitch",
+                      srChars[Math.floor(Math.random() * srChars.length)],
+                    );
+                }
+              });
+              if (doSym) lastSym = ts;
+              if (progress >= orig.length) {
+                spans.forEach(function (span, i) {
+                  span.className = "sr-char revealed";
+                  span.textContent = orig[i];
+                  span.removeAttribute("data-glitch");
+                });
+                var tiers = document.getElementById("tiers-text");
+                if (tiers) tiers.classList.add("tiers-revealed");
+                return;
+              }
+              requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+          }
+          buildSys();
+          var obs = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                  playSys();
+                  obs.unobserve(e.target);
+                }
+              });
+            },
+            { threshold: 0.3 },
+          );
+          obs.observe(document.getElementById("pricing-hero-wrap"));
+        }
+      })();
+      (function () {
+        var glitchChars =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%^&*_+=-<>?/[]{}1234567890";
+        function setupCardGlitch(el) {
+          var orig = el.dataset.glitchHover,
+            animating = false;
+          function build() {
+            el.innerHTML = orig
+              .split("")
+              .map(function (c) {
+                return c === " "
+                  ? '<span class="card-glitch-char space"> </span>'
+                  : '<span class="card-glitch-char">' + c + "</span>";
+              })
+              .join("");
+          }
+          function run() {
+            if (animating) return;
+            animating = true;
+            var spans = Array.from(el.querySelectorAll(".card-glitch-char")),
+              progress = 0,
+              lastT = 0,
+              lastSym = 0;
+            function step(ts) {
+              if (!lastT) lastT = ts;
+              if (!lastSym) lastSym = ts;
+              if (ts - lastT >= 15) {
+                progress += 0.34;
+                lastT = ts;
+              }
+              var doSym = ts - lastSym >= 65;
+              spans.forEach(function (span, i) {
+                var real = orig[i];
+                if (real === " ") {
+                  span.className = "card-glitch-char space";
+                  span.textContent = " ";
+                  span.removeAttribute("data-glitch");
+                  return;
+                }
+                if (i < progress) {
+                  span.className = "card-glitch-char";
+                  span.textContent = real;
+                  span.removeAttribute("data-glitch");
+                } else {
+                  span.className = "card-glitch-char glitching";
+                  span.textContent = real;
+                  if (doSym)
+                    span.setAttribute(
+                      "data-glitch",
+                      glitchChars[
+                        Math.floor(Math.random() * glitchChars.length)
+                      ],
+                    );
+                }
+              });
+              if (doSym) lastSym = ts;
+              if (progress >= orig.length) {
+                build();
+                animating = false;
+                return;
+              }
+              requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+          }
+          build();
+          var trigger = el.closest("[class*='hover']") || el;
+          trigger.addEventListener("mouseenter", run);
+        }
+        document
+          .querySelectorAll("[data-glitch-hover]")
+          .forEach(setupCardGlitch);
+      })();
+      (function () {
+        var glitchChars =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%^&*_+=-<>?/[]{}1234567890";
+        function setupPriceGlitch(el) {
+          var orig = el.dataset.glitchPrice,
+            animating = false,
+            savedHTML = el.innerHTML;
+          function run() {
+            if (animating) return;
+            animating = true;
+            el.innerHTML = orig
+              .split("")
+              .map(function (c) {
+                return c === " "
+                  ? '<span class="card-glitch-char space"> </span>'
+                  : '<span class="card-glitch-char">' + c + "</span>";
+              })
+              .join("");
+            var spans = Array.from(el.querySelectorAll(".card-glitch-char")),
+              progress = 0,
+              lastT = 0,
+              lastSym = 0;
+            function step(ts) {
+              if (!lastT) lastT = ts;
+              if (!lastSym) lastSym = ts;
+              if (ts - lastT >= 15) {
+                progress += 0.34;
+                lastT = ts;
+              }
+              var doSym = ts - lastSym >= 65;
+              spans.forEach(function (span, i) {
+                var real = orig[i];
+                if (real === " ") {
+                  span.className = "card-glitch-char space";
+                  span.textContent = " ";
+                  span.removeAttribute("data-glitch");
+                  return;
+                }
+                if (i < progress) {
+                  span.className = "card-glitch-char";
+                  span.textContent = real;
+                  span.removeAttribute("data-glitch");
+                } else {
+                  span.className = "card-glitch-char glitching";
+                  span.textContent = real;
+                  if (doSym)
+                    span.setAttribute(
+                      "data-glitch",
+                      glitchChars[
+                        Math.floor(Math.random() * glitchChars.length)
+                      ],
+                    );
+                }
+              });
+              if (doSym) lastSym = ts;
+              if (progress >= orig.length) {
+                el.innerHTML = savedHTML;
+                animating = false;
+                return;
+              }
+              requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+          }
+          el.addEventListener("mouseenter", run);
+        }
+        document
+          .querySelectorAll("[data-glitch-price]")
+          .forEach(setupPriceGlitch);
+      })();
+      (function () {
+        var btn = document.getElementById("mob-menu-btn");
+        var cls = document.getElementById("mob-menu-close");
+        var menu = document.getElementById("mob-menu");
+        if (!btn || !menu) return;
+        function openM() {
+          menu.style.transform = "translateX(0)";
+          menu.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+        }
+        function closeM() {
+          menu.style.transform = "translateX(100%)";
+          menu.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "";
+        }
+        btn.addEventListener("click", openM);
+        if (cls) cls.addEventListener("click", closeM);
+      })();
+    </script>
+  
+    <script>
+      (function () {
+        var gc = document.getElementById("gc");
+        var ctx = gc.getContext("2d");
+        var cities = document.getElementById("cities");
+        var wRaf = null;
+
+        /* Glitch character set — same as DUWIE nav */
+        var GC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%^&*_+=-<>?/[]{}1234567890";
+
+        /* ── CANVAS helpers (page load / exit) ── */
+        function resize() {
+          gc.width = window.innerWidth;
+          gc.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener("resize", resize);
+        function fillC() {
+          ctx.fillStyle = "#0a0a0a";
+          ctx.fillRect(0, 0, gc.width, gc.height);
+        }
+        function clearC() {
+          ctx.clearRect(0, 0, gc.width, gc.height);
+        }
+
+        function scanEdge(front) {
+          var W = gc.width,
+            H = gc.height,
+            zW = 190,
+            x0 = front - zW * 0.55;
+          for (var i = 0; i < 28; i++) {
+            var y = Math.random() * H,
+              sh = Math.random() * 20 + 1;
+            var xo = (Math.random() - 0.5) * 120,
+              sw = zW + Math.abs(xo) + Math.random() * 90;
+            var r = Math.random();
+            ctx.fillStyle = r < 0.6 ? "#ff5c00" : "#0a0a0a";
+            ctx.fillRect(x0 + xo, y, sw, sh);
+          }
+          for (var j = 0; j < 5; j++) {
+            var bx = x0 + Math.random() * zW * 1.8,
+              bw = Math.random() * 8 + 1;
+            ctx.globalAlpha = 0.4 + Math.random() * 0.6;
+            ctx.fillStyle = "#ff5c00";
+            ctx.fillRect(bx, 0, bw, H);
+            ctx.globalAlpha = 1;
+          }
+        }
+
+        function canvasWave(mode, dur, done) {
+          if (wRaf) cancelAnimationFrame(wRaf);
+          var W = (gc.width = window.innerWidth),
+            H = (gc.height = window.innerHeight);
+          var GW = 190,
+            start = null;
+          mode === "fill" ? clearC() : fillC();
+          function frame(now) {
+            if (!start) start = now;
+            var t = Math.min((now - start) / dur, 1);
+            var e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            var front = e * (W + GW * 2) - GW;
+            mode === "fill"
+              ? ((ctx.fillStyle = "#0a0a0a"),
+                ctx.fillRect(0, 0, Math.max(0, front), H))
+              : ctx.clearRect(0, 0, Math.max(0, front), H);
+            if (t < 1) {
+              wRaf = requestAnimationFrame(frame);
+            } else {
+              wRaf = null;
+              mode === "fill" ? fillC() : clearC();
+              done && done();
+            }
+          }
+          requestAnimationFrame(frame);
+        }
+
+        /* ── CHARACTER GLITCH WAVE ── */
+        function charWave(mode, dur, done) {
+          var chars = Array.from(document.querySelectorAll("#cities .ch"));
+          var dots = Array.from(document.querySelectorAll("#cities .cs"));
+          var W = window.innerWidth;
+
+          function toTrack(el) {
+            return el.closest(".ct");
+          }
+          var charTracks = chars.map(toTrack);
+          var dotTracks = dots.map(toTrack);
+
+          var trackSet = [];
+          charTracks.concat(dotTracks).forEach(function (t) {
+            if (t && trackSet.indexOf(t) < 0) trackSet.push(t);
+          });
+
+          function relX(el, track) {
+            return (
+              el.getBoundingClientRect().left -
+              track.getBoundingClientRect().left
+            );
+          }
+          var charRelX = chars.map(function (ch, i) {
+            return relX(ch, charTracks[i]);
+          });
+          var dotRelX = dots.map(function (d, i) {
+            return relX(d, dotTracks[i]);
+          });
+          var charTI = charTracks.map(function (t) {
+            return trackSet.indexOf(t);
+          });
+          var dotTI = dotTracks.map(function (t) {
+            return trackSet.indexOf(t);
+          });
+
+          var hidden = mode === "reveal" ? "0" : "1";
+          chars.forEach(function (ch) {
+            ch.style.color = "";
+            ch.textContent =
+              ch.dataset.orig === " " ? "\u00a0" : ch.dataset.orig;
+            ch.style.opacity = hidden;
+          });
+          dots.forEach(function (d) {
+            d.style.opacity = hidden;
+          });
+
+          var charRes = chars.map(function () {
+            return false;
+          });
+          var dotRes = dots.map(function () {
+            return false;
+          });
+          var GW = 240,
+            start = null;
+          var final = mode === "reveal" ? "1" : "0";
+
+          function frame(now) {
+            if (!start) start = now;
+            var t = Math.min((now - start) / dur, 1);
+            var e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            var front = e * (W + GW * 2) - GW;
+
+            var tl = trackSet.map(function (tr) {
+              return tr.getBoundingClientRect().left;
+            });
+
+            for (var i = 0; i < chars.length; i++) {
+              var ti = charTI[i];
+              if (ti < 0) continue;
+              var x = tl[ti] + charRelX[i];
+              if (x < -60 || x > W + 60) continue;
+              var dist = front - x;
+              if (dist >= GW && !charRes[i]) {
+                charRes[i] = true;
+                chars[i].style.color = "";
+                chars[i].textContent =
+                  chars[i].dataset.orig === " "
+                    ? "\u00a0"
+                    : chars[i].dataset.orig;
+                chars[i].style.opacity = final;
+              } else if (dist > 0 && dist < GW) {
+                chars[i].style.opacity = "1";
+                if (chars[i].dataset.orig !== " ") {
+                  chars[i].textContent =
+                    GC[Math.floor(Math.random() * GC.length)];
+                  chars[i].style.color = "#ff5c00";
+                }
+              }
+            }
+
+            for (var j = 0; j < dots.length; j++) {
+              var tj = dotTI[j];
+              if (tj < 0) continue;
+              var xd = tl[tj] + dotRelX[j];
+              if (xd < -60 || xd > W + 60) continue;
+              if (front - xd >= GW && !dotRes[j]) {
+                dotRes[j] = true;
+                dots[j].style.opacity = final;
+              }
+            }
+
+            if (t < 1) {
+              requestAnimationFrame(frame);
+            } else {
+              chars.forEach(function (ch) {
+                ch.textContent =
+                  ch.dataset.orig === " " ? "\u00a0" : ch.dataset.orig;
+                ch.style.color = "";
+                ch.style.opacity = final;
+              });
+              dots.forEach(function (d) {
+                d.style.opacity = final;
+              });
+              done && done();
+            }
+          }
+          requestAnimationFrame(frame);
+        }
+
+        /* ── PAGE LOAD ── */
+        if (sessionStorage.getItem("glitch-incoming")) {
+          sessionStorage.removeItem("glitch-incoming");
+          document
+            .querySelectorAll("#cities .ch, #cities .cs")
+            .forEach(function (el) {
+              el.style.opacity = "1";
+            });
+          cities.style.display = "flex";
+          canvasWave("clear", 1400, null);
+          charWave("hide", 1400, function () {
+            cities.style.display = "none";
+          });
+        } else {
+          clearC();
+        }
+
+        /* ── NAV CLICK ── */
+        document.addEventListener("click", function (e) {
+          var a = e.target.closest("a[href]");
+          if (!a) return;
+          var h = a.getAttribute("href");
+          if (
+            !h ||
+            h[0] === "#" ||
+            h.indexOf("://") > -1 ||
+            h.indexOf("mailto") === 0
+          )
+            return;
+          if (!h.match(/\.html/)) return;
+          if (a.classList.contains("active")) return;
+          e.preventDefault();
+          var dest = a.href;
+
+          cities.style.display = "flex";
+          canvasWave("fill", 1400, null);
+          charWave("reveal", 1400, function () {
+            setTimeout(function () {
+              sessionStorage.setItem("glitch-incoming", "1");
+              window.location.href = dest;
+            }, 420);
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
