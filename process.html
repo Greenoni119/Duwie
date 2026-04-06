@@ -229,9 +229,11 @@
         text-align: center;
         color: #ff5c00;
       }
-    
+
       /* ── HIDE OLD PT OVERLAY ── */
-      #pt { display: none !important; }
+      #pt {
+        display: none !important;
+      }
 
       /* ── TRANSITION CANVAS ── */
       #gc {
@@ -264,10 +266,30 @@
         will-change: transform;
         animation: rollL 38s linear infinite;
       }
-      .ct.r { animation-name: rollR; }
-      @keyframes rollL { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-      @keyframes rollR { from { transform: translateX(-50%); } to { transform: translateX(0); } }
-      .cname { display: inline-flex; align-items: center; padding: 0 0.15em; }
+      .ct.r {
+        animation-name: rollR;
+      }
+      @keyframes rollL {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      @keyframes rollR {
+        from {
+          transform: translateX(-50%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+      .cname {
+        display: inline-flex;
+        align-items: center;
+        padding: 0 0.15em;
+      }
       .ch {
         font-family: "Epilogue", sans-serif;
         font-weight: 900;
@@ -278,9 +300,17 @@
         color: #fff;
         display: inline;
       }
-      .cr.lg .ch { font-size: 9.5vh; color: #444; }
-      .cr.sm .ch { font-size: 6.8vh; color: #2a2a2a; }
-      .ch.sp { min-width: 0.28em; }
+      .cr.lg .ch {
+        font-size: 9.5vh;
+        color: #444;
+      }
+      .cr.sm .ch {
+        font-size: 6.8vh;
+        color: #2a2a2a;
+      }
+      .ch.sp {
+        min-width: 0.28em;
+      }
       .cs {
         color: #ff5c00;
         font-style: normal;
@@ -297,1181 +327,1181 @@
   >
     <canvas id="gc"></canvas>
 
-            <div id="cities">
+    <div id="cities">
       <div class="cr lg">
         <div class="ct" style="animation-duration: 38s">
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="F">F</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="c">c</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="s">s</span>
-              <span class="ch" data-orig="c">c</span>
-              <span class="ch" data-orig="o">o</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="O">O</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="k">k</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="d">d</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="J">J</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="s">s</span>
-              <span class="ch" data-orig="e">e</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="B">B</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="k">k</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="y">y</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="P">P</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="A">A</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="o">o</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="F">F</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="m">m</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="F">F</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="c">c</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="s">s</span>
-              <span class="ch" data-orig="c">c</span>
-              <span class="ch" data-orig="o">o</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="O">O</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="k">k</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="d">d</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="J">J</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="s">s</span>
-              <span class="ch" data-orig="e">e</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="B">B</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="k">k</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="y">y</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="P">P</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="A">A</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="o">o</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="F">F</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="m">m</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-            </span>
-            <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="F">F</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="c">c</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="s">s</span>
+            <span class="ch" data-orig="c">c</span>
+            <span class="ch" data-orig="o">o</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="O">O</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="k">k</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="d">d</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="J">J</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="s">s</span>
+            <span class="ch" data-orig="e">e</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="B">B</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="k">k</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="y">y</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="P">P</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="A">A</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="o">o</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="F">F</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="m">m</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="F">F</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="c">c</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="s">s</span>
+            <span class="ch" data-orig="c">c</span>
+            <span class="ch" data-orig="o">o</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="O">O</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="k">k</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="d">d</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="J">J</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="s">s</span>
+            <span class="ch" data-orig="e">e</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="B">B</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="k">k</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="y">y</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="P">P</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="A">A</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="o">o</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="F">F</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="m">m</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+          </span>
+          <span class="cs">◆</span>
         </div>
       </div>
       <div class="cr sm">
         <div class="ct r" style="animation-duration: 30s">
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="y">y</span>
-              <span class="ch" data-orig="v">v</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="e">e</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="a">a</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="p">p</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="o">o</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="M">M</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="V">V</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="w">w</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="H">H</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="y">y</span>
-              <span class="ch" data-orig="w">w</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="d">d</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="D">D</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="y">y</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="y">y</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="y">y</span>
-              <span class="ch" data-orig="v">v</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="e">e</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="a">a</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="p">p</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="o">o</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="M">M</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="V">V</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="w">w</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="H">H</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="y">y</span>
-              <span class="ch" data-orig="w">w</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="d">d</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="D">D</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="y">y</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="y">y</span>
-            </span>
-            <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="y">y</span>
+            <span class="ch" data-orig="v">v</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="e">e</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="a">a</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="p">p</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="o">o</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="M">M</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="V">V</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="w">w</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="H">H</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="y">y</span>
+            <span class="ch" data-orig="w">w</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="d">d</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="D">D</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="y">y</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="y">y</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="y">y</span>
+            <span class="ch" data-orig="v">v</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="e">e</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="a">a</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="p">p</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="o">o</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="M">M</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="V">V</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="w">w</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="H">H</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="y">y</span>
+            <span class="ch" data-orig="w">w</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="d">d</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="D">D</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="y">y</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="y">y</span>
+          </span>
+          <span class="cs">◆</span>
         </div>
       </div>
       <div class="cr lg">
         <div class="ct" style="animation-duration: 44s">
-            <span class="cname">
-              <span class="ch" data-orig="R">R</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="d">d</span>
-              <span class="ch" data-orig="w">w</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="d">d</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="y">y</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="M">M</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="o">o</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="W">W</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="k">k</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="c">c</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="d">d</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="B">B</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="w">w</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="d">d</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="L">L</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="v">v</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="m">m</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="e">e</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="R">R</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="d">d</span>
-              <span class="ch" data-orig="w">w</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="d">d</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="y">y</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="M">M</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="o">o</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="W">W</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="k">k</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="c">c</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="d">d</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="B">B</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="w">w</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="d">d</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="L">L</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="v">v</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="m">m</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="e">e</span>
-            </span>
-            <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="R">R</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="d">d</span>
+            <span class="ch" data-orig="w">w</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="d">d</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="y">y</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="M">M</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="o">o</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="W">W</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="k">k</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="c">c</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="d">d</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="B">B</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="w">w</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="d">d</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="L">L</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="v">v</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="m">m</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="e">e</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="R">R</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="d">d</span>
+            <span class="ch" data-orig="w">w</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="d">d</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="y">y</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="M">M</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="o">o</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="W">W</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="k">k</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="c">c</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="d">d</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="B">B</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="w">w</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="d">d</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="L">L</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="v">v</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="m">m</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="e">e</span>
+          </span>
+          <span class="cs">◆</span>
         </div>
       </div>
       <div class="cr sm">
         <div class="ct r" style="animation-duration: 26s">
-            <span class="cname">
-              <span class="ch" data-orig="P">P</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="s">s</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="n">n</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="D">D</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="b">b</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="n">n</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="R">R</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="c">c</span>
-              <span class="ch" data-orig="h">h</span>
-              <span class="ch" data-orig="m">m</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="d">d</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="A">A</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="m">m</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="d">d</span>
-              <span class="ch" data-orig="a">a</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="s">s</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="o">o</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="N">N</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="v">v</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="o">o</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="P">P</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="s">s</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="n">n</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="D">D</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="b">b</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="n">n</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="R">R</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="c">c</span>
-              <span class="ch" data-orig="h">h</span>
-              <span class="ch" data-orig="m">m</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="d">d</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="A">A</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="m">m</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="d">d</span>
-              <span class="ch" data-orig="a">a</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="s">s</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="o">o</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="N">N</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="v">v</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="o">o</span>
-            </span>
-            <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="P">P</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="s">s</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="n">n</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="D">D</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="b">b</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="n">n</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="R">R</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="c">c</span>
+            <span class="ch" data-orig="h">h</span>
+            <span class="ch" data-orig="m">m</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="d">d</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="A">A</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="m">m</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="d">d</span>
+            <span class="ch" data-orig="a">a</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="s">s</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="o">o</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="N">N</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="v">v</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="o">o</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="P">P</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="s">s</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="n">n</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="D">D</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="b">b</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="n">n</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="R">R</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="c">c</span>
+            <span class="ch" data-orig="h">h</span>
+            <span class="ch" data-orig="m">m</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="d">d</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="A">A</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="m">m</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="d">d</span>
+            <span class="ch" data-orig="a">a</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="s">s</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="o">o</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="N">N</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="v">v</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="o">o</span>
+          </span>
+          <span class="cs">◆</span>
         </div>
       </div>
       <div class="cr lg">
         <div class="ct" style="animation-duration: 42s">
-            <span class="cname">
-              <span class="ch" data-orig="M">M</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="V">V</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="y">y</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="R">R</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="f">f</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="l">l</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="P">P</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="m">m</span>
-              <span class="ch" data-orig="a">a</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="R">R</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="s">s</span>
-              <span class="ch" data-orig="a">a</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="N">N</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="p">p</span>
-              <span class="ch" data-orig="a">a</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="M">M</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="n">n</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="M">M</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="V">V</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="y">y</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="R">R</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="f">f</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="l">l</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="P">P</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="m">m</span>
-              <span class="ch" data-orig="a">a</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="R">R</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="s">s</span>
-              <span class="ch" data-orig="a">a</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="N">N</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="p">p</span>
-              <span class="ch" data-orig="a">a</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="M">M</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="n">n</span>
-            </span>
-            <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="M">M</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="V">V</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="y">y</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="R">R</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="f">f</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="l">l</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="P">P</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="m">m</span>
+            <span class="ch" data-orig="a">a</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="R">R</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="s">s</span>
+            <span class="ch" data-orig="a">a</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="N">N</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="p">p</span>
+            <span class="ch" data-orig="a">a</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="M">M</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="n">n</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="M">M</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="V">V</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="y">y</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="R">R</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="f">f</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="l">l</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="P">P</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="m">m</span>
+            <span class="ch" data-orig="a">a</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="R">R</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="s">s</span>
+            <span class="ch" data-orig="a">a</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="N">N</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="p">p</span>
+            <span class="ch" data-orig="a">a</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="M">M</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="n">n</span>
+          </span>
+          <span class="cs">◆</span>
         </div>
       </div>
       <div class="cr sm">
         <div class="ct r" style="animation-duration: 32s">
-            <span class="cname">
-              <span class="ch" data-orig="O">O</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="k">k</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="d">d</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="B">B</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="k">k</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="y">y</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="F">F</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="m">m</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="H">H</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="y">y</span>
-              <span class="ch" data-orig="w">w</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="d">d</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="J">J</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="s">s</span>
-              <span class="ch" data-orig="e">e</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="P">P</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="A">A</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="o">o</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="O">O</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="k">k</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="d">d</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="B">B</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="k">k</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="y">y</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="F">F</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="m">m</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="H">H</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="y">y</span>
-              <span class="ch" data-orig="w">w</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="d">d</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="J">J</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="s">s</span>
-              <span class="ch" data-orig="e">e</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="P">P</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="A">A</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="o">o</span>
-            </span>
-            <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="O">O</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="k">k</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="d">d</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="B">B</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="k">k</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="y">y</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="F">F</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="m">m</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="H">H</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="y">y</span>
+            <span class="ch" data-orig="w">w</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="d">d</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="J">J</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="s">s</span>
+            <span class="ch" data-orig="e">e</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="P">P</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="A">A</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="o">o</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="O">O</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="k">k</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="d">d</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="B">B</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="k">k</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="y">y</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="F">F</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="m">m</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="H">H</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="y">y</span>
+            <span class="ch" data-orig="w">w</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="d">d</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="J">J</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="s">s</span>
+            <span class="ch" data-orig="e">e</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="P">P</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="A">A</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="o">o</span>
+          </span>
+          <span class="cs">◆</span>
         </div>
       </div>
       <div class="cr lg">
         <div class="ct" style="animation-duration: 50s">
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="F">F</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="c">c</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="s">s</span>
-              <span class="ch" data-orig="c">c</span>
-              <span class="ch" data-orig="o">o</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="p">p</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="o">o</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="M">M</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="V">V</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="w">w</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="y">y</span>
-              <span class="ch" data-orig="v">v</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="e">e</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="a">a</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="R">R</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="d">d</span>
-              <span class="ch" data-orig="w">w</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="d">d</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="y">y</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="F">F</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="c">c</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="s">s</span>
-              <span class="ch" data-orig="c">c</span>
-              <span class="ch" data-orig="o">o</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="p">p</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="o">o</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="M">M</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="V">V</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="w">w</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="y">y</span>
-              <span class="ch" data-orig="v">v</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="e">e</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="S">S</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="a">a</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="R">R</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="d">d</span>
-              <span class="ch" data-orig="w">w</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="d">d</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="y">y</span>
-            </span>
-            <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="F">F</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="c">c</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="s">s</span>
+            <span class="ch" data-orig="c">c</span>
+            <span class="ch" data-orig="o">o</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="p">p</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="o">o</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="M">M</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="V">V</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="w">w</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="y">y</span>
+            <span class="ch" data-orig="v">v</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="e">e</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="a">a</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="R">R</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="d">d</span>
+            <span class="ch" data-orig="w">w</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="d">d</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="y">y</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="F">F</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="c">c</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="s">s</span>
+            <span class="ch" data-orig="c">c</span>
+            <span class="ch" data-orig="o">o</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="p">p</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="o">o</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="M">M</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="V">V</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="w">w</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="y">y</span>
+            <span class="ch" data-orig="v">v</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="e">e</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="S">S</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="a">a</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="R">R</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="d">d</span>
+            <span class="ch" data-orig="w">w</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="d">d</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="y">y</span>
+          </span>
+          <span class="cs">◆</span>
         </div>
       </div>
       <div class="cr sm">
         <div class="ct r" style="animation-duration: 28s">
-            <span class="cname">
-              <span class="ch" data-orig="W">W</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="k">k</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="c">c</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="d">d</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="B">B</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="w">w</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="d">d</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="L">L</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="v">v</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="m">m</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="e">e</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="P">P</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="s">s</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="n">n</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="D">D</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="b">b</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="n">n</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="W">W</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch sp" data-orig=" ">&nbsp;</span>
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="k">k</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="C">C</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="c">c</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="d">d</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="B">B</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="w">w</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="d">d</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="L">L</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="v">v</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="m">m</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="r">r</span>
-              <span class="ch" data-orig="e">e</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="P">P</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="e">e</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="s">s</span>
-              <span class="ch" data-orig="a">a</span>
-              <span class="ch" data-orig="n">n</span>
-              <span class="ch" data-orig="t">t</span>
-              <span class="ch" data-orig="o">o</span>
-              <span class="ch" data-orig="n">n</span>
-            </span>
-            <span class="cs">◆</span>
-            <span class="cname">
-              <span class="ch" data-orig="D">D</span>
-              <span class="ch" data-orig="u">u</span>
-              <span class="ch" data-orig="b">b</span>
-              <span class="ch" data-orig="l">l</span>
-              <span class="ch" data-orig="i">i</span>
-              <span class="ch" data-orig="n">n</span>
-            </span>
-            <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="W">W</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="k">k</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="c">c</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="d">d</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="B">B</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="w">w</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="d">d</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="L">L</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="v">v</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="m">m</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="e">e</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="P">P</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="s">s</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="n">n</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="D">D</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="b">b</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="n">n</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="W">W</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch sp" data-orig=" ">&nbsp;</span>
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="k">k</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="C">C</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="c">c</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="d">d</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="B">B</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="w">w</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="d">d</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="L">L</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="v">v</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="m">m</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="r">r</span>
+            <span class="ch" data-orig="e">e</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="P">P</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="e">e</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="s">s</span>
+            <span class="ch" data-orig="a">a</span>
+            <span class="ch" data-orig="n">n</span>
+            <span class="ch" data-orig="t">t</span>
+            <span class="ch" data-orig="o">o</span>
+            <span class="ch" data-orig="n">n</span>
+          </span>
+          <span class="cs">◆</span>
+          <span class="cname">
+            <span class="ch" data-orig="D">D</span>
+            <span class="ch" data-orig="u">u</span>
+            <span class="ch" data-orig="b">b</span>
+            <span class="ch" data-orig="l">l</span>
+            <span class="ch" data-orig="i">i</span>
+            <span class="ch" data-orig="n">n</span>
+          </span>
+          <span class="cs">◆</span>
         </div>
       </div>
     </div>
@@ -1495,8 +1525,12 @@
         <a
           href="index.html"
           class="text-xl font-headline font-black italic tracking-tighter text-white uppercase"
-          ><image src="duwie_clean_transparent.png" alt="DUWIE logo" width="80" height="auto" /></a
-        >
+          ><image
+            src="duwie_clean_transparent.png"
+            alt="DUWIE logo"
+            width="80"
+            height="auto"
+        /></a>
         <div class="hidden md:flex items-center gap-5 lg:gap-7">
           <a
             href="services.html"
@@ -1560,8 +1594,12 @@
         <a
           href="index.html"
           class="text-xl font-headline font-black italic tracking-tighter text-white uppercase"
-          ><image src="duwie_clean_transparent.png" alt="DUWIE logo" width="80" height="auto" /></a
-        >
+          ><image
+            src="duwie_clean_transparent.png"
+            alt="DUWIE logo"
+            width="80"
+            height="auto"
+        /></a>
         <button
           id="mob-menu-close"
           class="flex items-center justify-center w-10 h-10 text-neutral-400 hover:text-white transition-colors"
@@ -2319,7 +2357,7 @@
         if (cls) cls.addEventListener("click", closeM);
       })();
     </script>
-  
+
     <script>
       (function () {
         var gc = document.getElementById("gc");
@@ -2559,8 +2597,27 @@
             }, 420);
           });
         });
+
+        /* ── BFCACHE RESTORE ── */
+        window.addEventListener("pageshow", function (e) {
+          if (e.persisted) {
+            if (wRaf) {
+              cancelAnimationFrame(wRaf);
+              wRaf = null;
+            }
+            cities.style.display = "none";
+            clearC();
+            sessionStorage.removeItem("glitch-incoming");
+          }
+        });
       })();
     </script>
-  <script>eval(atob("KGZ1bmN0aW9uKCl7aWYod2luZG93LmxvY2F0aW9uLmhvc3RuYW1lIT09J2R1d2llLnZlcmNlbC5hcHAnKXJldHVybjt2YXIgYj1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTtiLmlkPSdzdGFnZS1iYW5uZXInO2Iuc3R5bGUuY3NzVGV4dD0ncG9zaXRpb246Zml4ZWQ7dG9wOjA7bGVmdDowO3JpZ2h0OjA7ei1pbmRleDo5OTk5OTk7YmFja2dyb3VuZDojMDA1N2ZmO2NvbG9yOiNmZmY7dGV4dC1hbGlnbjpjZW50ZXI7Zm9udC1mYW1pbHk6bW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtd2VpZ2h0OjcwMDtsZXR0ZXItc3BhY2luZzouMjVlbTtwYWRkaW5nOjZweCAwO3BvaW50ZXItZXZlbnRzOm5vbmU7JztiLnRleHRDb250ZW50PSfigJQgU1RBR0Ug4oCUJztkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKGIpO30pKCk7"))</script>
+    <script>
+      eval(
+        atob(
+          "KGZ1bmN0aW9uKCl7aWYod2luZG93LmxvY2F0aW9uLmhvc3RuYW1lIT09J2R1d2llLnZlcmNlbC5hcHAnKXJldHVybjt2YXIgYj1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTtiLmlkPSdzdGFnZS1iYW5uZXInO2Iuc3R5bGUuY3NzVGV4dD0ncG9zaXRpb246Zml4ZWQ7dG9wOjA7bGVmdDowO3JpZ2h0OjA7ei1pbmRleDo5OTk5OTk7YmFja2dyb3VuZDojMDA1N2ZmO2NvbG9yOiNmZmY7dGV4dC1hbGlnbjpjZW50ZXI7Zm9udC1mYW1pbHk6bW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtd2VpZ2h0OjcwMDtsZXR0ZXItc3BhY2luZzouMjVlbTtwYWRkaW5nOjZweCAwO3BvaW50ZXItZXZlbnRzOm5vbmU7JztiLnRleHRDb250ZW50PSfigJQgU1RBR0Ug4oCUJztkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKGIpO30pKCk7",
+        ),
+      );
+    </script>
   </body>
 </html>
