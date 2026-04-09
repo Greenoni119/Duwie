@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>DUWIE | Web Solutions Built for Growth</title>
+    <script>if(!sessionStorage.getItem('intro-seen'))document.documentElement.classList.add('intro-pending');</script>
+    <style>html.intro-pending body::before{content:'';position:fixed;inset:0;background:#0a0a0a;z-index:9997;pointer-events:none;}html.intro-pending .duwie-wrap,html.intro-pending .duwie-trail{animation-play-state:paused;}</style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -2374,7 +2376,11 @@
               });
               if (doSym) lastSym = ts;
               if (progress >= orig.length) {
-                build();
+                spans.forEach(function (span, i) {
+                  span.className = orig[i] === " " ? "nav-glitch-char space" : "nav-glitch-char";
+                  span.textContent = orig[i] === " " ? " " : orig[i];
+                  span.removeAttribute("data-glitch");
+                });
                 animating = false;
                 return;
               }
@@ -2847,49 +2853,31 @@
           requestAnimationFrame(frame);
         }
 
-        /* ── PAGE LOAD ── */
-        if (sessionStorage.getItem("glitch-incoming")) {
-          sessionStorage.removeItem("glitch-incoming");
+        /* ── PAGE LOAD INTRO (once per session) ── */
+        if (!sessionStorage.getItem("intro-seen")) {
+          sessionStorage.setItem("intro-seen", "1");
+          cities.style.background = "#0a0a0a";
           document
             .querySelectorAll("#cities .ch, #cities .cs")
             .forEach(function (el) {
               el.style.opacity = "1";
             });
           cities.style.display = "flex";
-          canvasWave("clear", 1400, null);
           charWave("hide", 1400, function () {
-            cities.style.display = "none";
+            document.documentElement.classList.remove("intro-pending");
+            cities.style.transition = "opacity 0.5s ease";
+            cities.style.opacity = "0";
+            setTimeout(function () {
+              cities.style.display = "none";
+              cities.style.opacity = "";
+              cities.style.transition = "";
+              cities.style.background = "";
+              clearC();
+            }, 500);
           });
         } else {
           clearC();
         }
-
-        /* ── NAV CLICK ── */
-        document.addEventListener("click", function (e) {
-          var a = e.target.closest("a[href]");
-          if (!a) return;
-          var h = a.getAttribute("href");
-          if (
-            !h ||
-            h[0] === "#" ||
-            h.indexOf("://") > -1 ||
-            h.indexOf("mailto") === 0
-          )
-            return;
-          if (!h.match(/\.html/)) return;
-          if (a.classList.contains("active")) return;
-          e.preventDefault();
-          var dest = a.href;
-
-          cities.style.display = "flex";
-          canvasWave("fill", 1400, null);
-          charWave("reveal", 1400, function () {
-            setTimeout(function () {
-              sessionStorage.setItem("glitch-incoming", "1");
-              window.location.href = dest;
-            }, 420);
-          });
-        });
 
         /* ── BFCACHE RESTORE ── */
         window.addEventListener("pageshow", function (e) {
@@ -2897,7 +2885,6 @@
             if (wRaf) { cancelAnimationFrame(wRaf); wRaf = null; }
             cities.style.display = "none";
             clearC();
-            sessionStorage.removeItem("glitch-incoming");
           }
         });
       })();
