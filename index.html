@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>DUWIE | Web Solutions Built for Growth</title>
+    <script>if(!sessionStorage.getItem('intro-seen'))document.documentElement.classList.add('intro-pending');</script>
+    <style>html.intro-pending body::before{content:'';position:fixed;inset:0;background:#0a0a0a;z-index:9997;pointer-events:none;}</style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -496,18 +498,6 @@
     class="bg-[#0A0A0A] text-[#e5e2e1] font-body overflow-x-hidden selection:bg-[#ff5c00] selection:text-[#3a0a00]"
   >
     <canvas id="gc"></canvas>
-    <script>
-      if (!sessionStorage.getItem("intro-seen")) {
-        (function () {
-          var c = document.getElementById("gc");
-          c.width = window.innerWidth;
-          c.height = window.innerHeight;
-          var x = c.getContext("2d");
-          x.fillStyle = "#0a0a0a";
-          x.fillRect(0, 0, c.width, c.height);
-        })();
-      }
-    </script>
 
             <div id="cities">
       <div class="cr lg">
@@ -2866,6 +2856,7 @@
         /* ── PAGE LOAD INTRO (once per session) ── */
         if (!sessionStorage.getItem("intro-seen")) {
           sessionStorage.setItem("intro-seen", "1");
+          document.documentElement.classList.remove("intro-pending");
           document
             .querySelectorAll("#cities .ch, #cities .cs")
             .forEach(function (el) {
