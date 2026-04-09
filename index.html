@@ -2856,16 +2856,24 @@
         /* ── PAGE LOAD INTRO (once per session) ── */
         if (!sessionStorage.getItem("intro-seen")) {
           sessionStorage.setItem("intro-seen", "1");
-          document.documentElement.classList.remove("intro-pending");
+          cities.style.background = "#0a0a0a";
           document
             .querySelectorAll("#cities .ch, #cities .cs")
             .forEach(function (el) {
               el.style.opacity = "1";
             });
           cities.style.display = "flex";
-          canvasWave("clear", 1400, null);
+          document.documentElement.classList.remove("intro-pending");
           charWave("hide", 1400, function () {
-            cities.style.display = "none";
+            cities.style.transition = "opacity 0.5s ease";
+            cities.style.opacity = "0";
+            setTimeout(function () {
+              cities.style.display = "none";
+              cities.style.opacity = "";
+              cities.style.transition = "";
+              cities.style.background = "";
+              clearC();
+            }, 500);
           });
         } else {
           clearC();
