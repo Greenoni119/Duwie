@@ -496,6 +496,18 @@
     class="bg-[#0A0A0A] text-[#e5e2e1] font-body overflow-x-hidden selection:bg-[#ff5c00] selection:text-[#3a0a00]"
   >
     <canvas id="gc"></canvas>
+    <script>
+      if (!sessionStorage.getItem("intro-seen")) {
+        (function () {
+          var c = document.getElementById("gc");
+          c.width = window.innerWidth;
+          c.height = window.innerHeight;
+          var x = c.getContext("2d");
+          x.fillStyle = "#0a0a0a";
+          x.fillRect(0, 0, c.width, c.height);
+        })();
+      }
+    </script>
 
             <div id="cities">
       <div class="cr lg">
@@ -2854,23 +2866,15 @@
         /* ── PAGE LOAD INTRO (once per session) ── */
         if (!sessionStorage.getItem("intro-seen")) {
           sessionStorage.setItem("intro-seen", "1");
-          cities.style.background = "#0a0a0a";
           document
             .querySelectorAll("#cities .ch, #cities .cs")
             .forEach(function (el) {
               el.style.opacity = "1";
             });
           cities.style.display = "flex";
+          canvasWave("clear", 1400, null);
           charWave("hide", 1400, function () {
-            cities.style.transition = "opacity 0.5s ease";
-            cities.style.opacity = "0";
-            setTimeout(function () {
-              cities.style.display = "none";
-              cities.style.opacity = "";
-              cities.style.transition = "";
-              cities.style.background = "";
-              clearC();
-            }, 500);
+            cities.style.display = "none";
           });
         } else {
           clearC();
