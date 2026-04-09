@@ -2847,9 +2847,9 @@
           requestAnimationFrame(frame);
         }
 
-        /* ── PAGE LOAD ── */
-        if (sessionStorage.getItem("glitch-incoming")) {
-          sessionStorage.removeItem("glitch-incoming");
+        /* ── PAGE LOAD INTRO (once per session) ── */
+        if (!sessionStorage.getItem("intro-seen")) {
+          sessionStorage.setItem("intro-seen", "1");
           document
             .querySelectorAll("#cities .ch, #cities .cs")
             .forEach(function (el) {
@@ -2864,40 +2864,12 @@
           clearC();
         }
 
-        /* ── NAV CLICK ── */
-        document.addEventListener("click", function (e) {
-          var a = e.target.closest("a[href]");
-          if (!a) return;
-          var h = a.getAttribute("href");
-          if (
-            !h ||
-            h[0] === "#" ||
-            h.indexOf("://") > -1 ||
-            h.indexOf("mailto") === 0
-          )
-            return;
-          if (!h.match(/\.html/)) return;
-          if (a.classList.contains("active")) return;
-          e.preventDefault();
-          var dest = a.href;
-
-          cities.style.display = "flex";
-          canvasWave("fill", 1400, null);
-          charWave("reveal", 1400, function () {
-            setTimeout(function () {
-              sessionStorage.setItem("glitch-incoming", "1");
-              window.location.href = dest;
-            }, 420);
-          });
-        });
-
         /* ── BFCACHE RESTORE ── */
         window.addEventListener("pageshow", function (e) {
           if (e.persisted) {
             if (wRaf) { cancelAnimationFrame(wRaf); wRaf = null; }
             cities.style.display = "none";
             clearC();
-            sessionStorage.removeItem("glitch-incoming");
           }
         });
       })();
