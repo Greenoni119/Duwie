@@ -2104,7 +2104,14 @@
               });
               if (doSym) lastSym = ts;
               if (progress >= orig.length) {
-                build();
+                spans.forEach(function (span, i) {
+                  span.className =
+                    orig[i] === " "
+                      ? "nav-glitch-char space"
+                      : "nav-glitch-char";
+                  span.textContent = orig[i] === " " ? " " : orig[i];
+                  span.removeAttribute("data-glitch");
+                });
                 animating = false;
                 return;
               }
